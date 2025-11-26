@@ -1,140 +1,60 @@
-📘 Transformer Attention Visualization using Hugging Face BERT
+<h1 align="center">📘 Transformer Attention Visualization using Hugging Face BERT</h1>
 
-Understanding Self-Attention Through Interactive & Static Visualizations
+<p align="center">
+  <em>Visualizing self-attention patterns across BERT’s layers and heads using Transformers, PyTorch, BertViz, and Matplotlib.</em>
+</p>
 
-This project demonstrates how to extract, analyze, and visualize self-attention from a pre-trained BERT model using Hugging Face Transformers, PyTorch, BertViz, and Matplotlib.
-You learn how BERT “looks” at different tokens, how attention changes across layers and heads, and how to build meaningful visualizations for NLP interpretability.
+<p align="center">
+  <img src="https://img.shields.io/badge/Transformers-HuggingFace-blue?style=for-the-badge&logo=huggingface" />
+  <img src="https://img.shields.io/badge/PyTorch-Deep%20Learning-orange?style=for-the-badge&logo=pytorch" />
+  <img src="https://img.shields.io/badge/BertViz-Attention%20Visualization-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Matplotlib-Heatmaps-red?style=for-the-badge&logo=python" />
+</p>
 
-🚀 Overview
+---
 
-Transformers power most modern NLP systems, and self-attention is their core mechanism.
-In this project, you will:
+## 📘 Overview
 
-Load a BERT base model (bert-base-uncased)
+This project demonstrates how to **extract and visualize the self-attention** mechanism of the BERT model.  
+You will explore how tokens attend to one another, how meaning is formed across layers, and how to interpret the internal working of Transformer models.
 
-Extract its attention tensors
+It includes **interactive visualizations** (via BertViz) and **static heatmaps**, making it ideal for NLP interpretability, research, and educational use.
 
-Visualize attention using:
-✔ BertViz (interactive)
-✔ Matplotlib heatmaps
-✔ Token-focused attention plots
+---
 
-Interpret why certain words attend to others
+## 🚀 Objectives
 
-Understand how BERT processes context and meaning
+- Load BERT and extract **attention tensors** from all 12 layers × 12 heads.
+- Visualize self-attention interactively using **BertViz**.
+- Plot static heatmaps showing token-to-token attention flow.
+- Examine how specific tokens (e.g., “bank”) attend to disambiguating context.
+- Understand the behavior of Transformer layers for NLP tasks.
 
-This project is based on my notebook and documentation:
-“Visualize Transformer Attention using Hugging Face BERT”.
+---
 
-📂 Tech Stack
-Layer	Tools Used	Purpose
-Model Hub	Hugging Face Transformers	Load BERT, return attentions
-Backend	PyTorch	Model inference
-Visualization (Interactive)	BertViz	Explore layers × heads
-Visualization (Static)	Matplotlib, NumPy	Heatmaps & token-level charts
-Runtime	Google Colab / Local Python	GPU support & easy execution
-📦 Installation
-Install Requirements
-pip install -U transformers torch bertviz matplotlib numpy
+## 🛠️ Tech Stack
 
-🧠 Key Concepts You Learn
-✔ BERT’s attention structure
+| Category           | Tools & Libraries                                      |
+|-------------------|---------------------------------------------------------|
+| Language           | Python                                                 |
+| Model              | BERT (bert-base-uncased)                               |
+| Framework          | PyTorch                                                |
+| Visualization      | BertViz, Matplotlib, NumPy                             |
+| Tokenization       | Hugging Face Tokenizers                                |
+| Development        | Jupyter Notebook / Google Colab                        |
+| Environment        | GPU-supported runtime recommended                      |
 
-Each attention tensor has shape:
-(layers, heads, seq_len, seq_len)
+---
 
-✔ Understanding attention
+## 🧾 Features
 
-Row i → where token i sends attention
+- Extract attention tensors from all BERT layers  
+- Full **interactive attention viewer** (BertViz)  
+- Static **heatmaps** for any head/layer combination  
+- Token-specific attention analysis  
+- Support for custom sentences and experimentation  
 
-Column j → how much token j is attended to
+---
 
-Deeper layers = more semantic patterns
+## 📚 Example Input Sentence
 
-Heads specialize (syntax, position, disambiguation)
-
-✔ Visualizing attention
-
-Interactive graph for each head
-
-Heatmap per layer/head
-
-Token-specific attention distribution (e.g., “bank” → “deposit”, “money”)
-
-📓 Notebook Walkthrough
-1️⃣ Install & import dependencies
-2️⃣ Load tokenizer & model with output_attentions=True
-3️⃣ Tokenize sample sentence
-
-Example:
-
-"He went to the bank to deposit money."
-
-4️⃣ Run BERT forward pass
-
-Extract:
-
-attentions[layer][batch, head, from, to]
-
-5️⃣ Interactive Visualization (BertViz)
-
-Explore 12 layers × 12 heads
-Click any head to view token-to-token attention links.
-
-6️⃣ Static Heatmaps
-
-Plot attention matrices using Matplotlib.
-
-7️⃣ Token-specific attention
-
-See which tokens a specific word (e.g., bank) attends to strongly.
-
-📊 Example Outcomes
-✔ Find which tokens clarify meaning
-
-For ambiguous words like bank, attention highlights contextual words:
-deposit, money
-
-✔ Visualize global context
-
-Special tokens like [CLS] gather global sentence information.
-
-✔ Understand specialization
-
-Some heads track structure, others track long-range dependencies.
-
-▶️ Running Instructions
-Google Colab (Recommended)
-
-Upload .ipynb
-
-Run cells sequentially
-
-Explore attention using BertViz
-
-Local Python
-python Transformer_Attention.ipynb
-
-
-(open in Jupyter or VS Code)
-
-📁 Suggested Repository Structure
-📦 transformer-attention-bert
- ┣ 📄 README.md
- ┣ 📓 Transformer_Attention.ipynb
- ┣ 📄 Transformers-attention.docx
- ┗ 📁 images/ (optional example screenshots)
-
-🚀 Future Enhancements
-
-Add RoBERTa, DistilBERT, ALBERT comparisons
-
-Combine attention across layers
-
-Visualize attention before vs after fine-tuning
-
-Export visualizations automatically
-
-📜 License
-
-MIT License — free to use, modify, and share.
