@@ -56,5 +56,20 @@ It includes **interactive visualizations** (via BertViz) and **static heatmaps**
 
 ---
 
-## 📚 Example Input Sentence
+## 📊 Visualizations Included
 
+### ✔ Interactive Attention (BertViz)
+- Explore attention for all 12 layers × 12 heads  
+- Click on heads to view token-to-token links  
+- Visualize cross-token influence and dependencies  
+
+### ✔ Static Heatmaps (Matplotlib)
+- Heatmaps showing which tokens attend to which  
+- Customizable layer/head selection  
+- Intuitive interpretation of attention intensities  
+
+### ✔ Token-Specific Attention Plots
+- Extract attention distribution from a selected token  
+- Useful for interpretability and report generation  
+
+---
